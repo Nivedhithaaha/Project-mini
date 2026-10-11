@@ -1,0 +1,13 @@
+{
+  "name": "exam-day-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes node@22 --watch --env-file=.env src/server.js",
+    "start": "npx --yes node@22 --env-file=.env src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

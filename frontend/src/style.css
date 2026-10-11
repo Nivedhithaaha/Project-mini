@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #25342c;
+  background: #f7f6f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --green: #294b3c;
+  --muted: #898f86;
+  --paper: #fffefa;
+  --line: #e8e7df;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.auth-layout { min-height: 100vh; display: grid; grid-template-columns: minmax(320px, 0.9fr) minmax(400px, 1.1fr); }
+.auth-art { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 40px 8%; color: #f7f5ed; background: #294b3c; }
+.brand { display: inline-flex; width: fit-content; align-items: center; gap: 10px; color: inherit; font-weight: 700; letter-spacing: -.04em; text-decoration: none; font-size: 18px; }
+.brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border: 1px solid currentColor; border-radius: 50%; font-family: "Playfair Display", serif; font-style: italic; font-size: 19px; }
+.art-note { position: relative; z-index: 1; margin: auto 0; padding-left: 18px; border-left: 1px solid #86a291; }
+.art-note > span:first-child, .art-caption { color: #b9cabd; font-size: 10px; font-weight: 700; letter-spacing: .2em; }
+.art-note p { margin: 20px 0 26px; font: 500 clamp(40px, 5vw, 64px)/1.12 "Playfair Display", serif; }
+.note-line { display: block; width: 40px; height: 1px; margin-bottom: 17px; background: #b9cabd; }
+.art-note small { color: #d0d9d1; font-size: 12px; }
+.art-doodle { position: absolute; right: -28px; bottom: 9%; color: #3c604d; font-size: min(39vw, 420px); line-height: 1; }
+.art-caption { position: relative; z-index: 1; }
+.auth-card { display: flex; flex-direction: column; justify-content: center; width: min(100%, 540px); padding: 64px clamp(32px, 8vw, 112px); margin: auto; }
+.eyebrow { color: #748476; font-size: 10px; font-weight: 700; letter-spacing: .18em; }
+h1, h2, h3, p { margin-top: 0; }
+.auth-card h1, .welcome h1 { margin: 17px 0 12px; font: 500 clamp(38px, 4vw, 54px)/1.13 "Playfair Display", serif; letter-spacing: -.035em; }
+h1 em { color: #9b7958; font-weight: 500; }
+.muted { color: var(--muted); font-size: 13px; }
+.mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 35px 0 26px; padding: 4px; border-radius: 8px; background: #eeede7; }
+.mode { padding: 10px; border: 0; border-radius: 6px; color: #777d76; background: transparent; font-size: 12px; }
+.mode.active { color: var(--green); background: var(--paper); box-shadow: 0 1px 4px #223b2b12; font-weight: 700; }
+form { display: grid; gap: 17px; }
+label { display: grid; gap: 8px; color: #435249; font-size: 12px; font-weight: 600; }
+input { width: 100%; min-width: 0; padding: 12px 13px; border: 1px solid #e3e4dc; border-radius: 6px; outline: none; color: #26362d; background: var(--paper); font-size: 13px; transition: border-color .2s, box-shadow .2s; }
+input:focus { border-color: #7b9985; box-shadow: 0 0 0 3px #426b5012; }
+input::placeholder { color: #b0b3ac; }
+.hint, .optional { color: #969b93; font-size: 11px; font-weight: 400; }
+.primary { display: flex; justify-content: space-between; align-items: center; border: 0; border-radius: 6px; padding: 13px 15px; color: white; background: var(--green); font-size: 12px; font-weight: 600; transition: background .2s, transform .2s; }
+.primary:hover { transform: translateY(-1px); background: #1f3d30; }
+.primary:disabled { opacity: .65; cursor: wait; }
+.full { width: 100%; margin-top: 3px; }
+.privacy-note { margin: 25px 0 0; color: #a1a49c; font-size: 11px; text-align: center; }
+.text-button { border: 0; padding: 5px; color: #718174; background: none; font-size: 11px; }
+.text-button:hover { color: var(--green); text-decoration: underline; }
+.error { margin: 0; color: #ae5043; font-size: 12px; }
+
+.dashboard { width: min(1120px, 100%); min-height: 100vh; padding: 0 48px; margin: auto; }
+.topbar { min-height: 82px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); }
+.account { display: flex; align-items: center; gap: 20px; color: #81877e; font-size: 12px; }
+.account strong { color: #394a3f; font-weight: 600; }
+.welcome { display: flex; align-items: end; justify-content: space-between; padding: 65px 0 44px; }
+.welcome h1 { margin-bottom: 0; font-size: clamp(38px, 5vw, 58px); }
+.welcome h1 em { color: #9b7958; }
+.exam-count { display: grid; gap: 4px; padding: 0 0 5px; color: #838a81; font-size: 11px; text-align: right; }
+.exam-count strong { color: var(--green); font: 500 44px/1 "Playfair Display", serif; }
+.content-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(270px, .85fr); gap: 25px; align-items: start; }
+.list-panel, .add-panel { border: 1px solid var(--line); border-radius: 9px; background: var(--paper); }
+.list-panel { min-height: 350px; padding: 28px 30px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 20px; }
+.section-heading h2, .add-panel h2 { margin: 7px 0 0; font: 500 25px "Playfair Display", serif; }
+.count-pill { padding: 6px 10px; border-radius: 20px; color: #718174; background: #eff2ed; font-size: 10px; }
+.exam-row { display: flex; align-items: center; gap: 15px; min-height: 82px; border-top: 1px solid #efeee8; }
+.date-tile { display: grid; place-items: center; align-content: center; flex: 0 0 50px; height: 54px; border-radius: 6px; color: #718174; background: #f0f2ed; }
+.date-tile span { font-size: 9px; text-transform: uppercase; }
+.date-tile strong { color: #294b3c; font: 500 22px/1.1 "Playfair Display", serif; }
+.exam-info { min-width: 0; flex: 1; }
+.exam-info h3 { overflow: hidden; margin: 0 0 5px; color: #384b3e; font-size: 13px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.exam-info p { margin: 0; color: #8b9088; font-size: 10px; }
+.exam-info p span { padding: 0 3px; color: #b3b7ae; }
+.subject-dot { width: 7px; height: 7px; border-radius: 50%; background: #c08e66; }
+.dot-1 { background: #8398a0; }
+.dot-2 { background: #b7aa72; }
+.dot-3 { background: #a58287; }
+.remove-button { border: 0; padding: 4px 7px; color: #a4a79f; background: transparent; font-size: 19px; }
+.remove-button:hover { color: #ae5043; }
+.empty-state { display: grid; place-items: center; padding: 49px 16px; text-align: center; }
+.empty-icon { color: #b7aa72; font-size: 25px; }
+.empty-state h3 { margin: 12px 0 5px; font: 500 19px "Playfair Display", serif; }
+.empty-state p { margin: 0; color: var(--muted); font-size: 11px; }
+.add-panel { padding: 27px 24px 25px; background: #f1f0e9; }
+.add-panel h2 { margin: 8px 0 5px; }
+.add-panel > .muted { margin-bottom: 24px; font-size: 11px; }
+.add-panel form { gap: 14px; }
+.add-panel input { background: #fffefa; font-size: 11px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-row input { padding: 10px 8px; }
+.footer { display: flex; justify-content: space-between; padding: 25px 0; color: #a0a49b; font-size: 10px; }
+.footer > span:last-child { font-size: 9px; font-weight: 700; letter-spacing: .15em; }
+.footer-star { color: #9b7958; }
+
+@media (max-width: 760px) {
+  .auth-layout { grid-template-columns: 1fr; }
+  .auth-art { min-height: 190px; padding: 25px 7%; }
+  .art-note { display: none; }
+  .art-doodle { right: -4px; bottom: -65px; font-size: 215px; }
+  .art-caption { position: absolute; left: 7%; bottom: 25px; font-size: 8px; }
+  .auth-card { padding: 48px 7%; }
+  .dashboard { padding: 0 22px; }
+  .welcome { padding: 44px 0 30px; }
+  .content-grid { grid-template-columns: 1fr; }
+  .add-panel { grid-row: 1; }
+}
+@media (max-width: 420px) {
+  .dashboard { padding: 0 15px; }
+  .topbar { min-height: 68px; }
+  .account { gap: 9px; font-size: 10px; }
+  .account .text-button { font-size: 10px; }
+  .welcome h1 { font-size: 39px; }
+  .exam-count strong { font-size: 35px; }
+  .exam-count { font-size: 9px; }
+  .list-panel { padding: 22px 16px; }
+  .exam-row { gap: 10px; }
+  .exam-info p { font-size: 9px; }
+}
